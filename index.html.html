@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>التقرير النهائي للمبادرات الإبداعية والتسويقية — معهد ابن مالك</title>
+<style>
+:root{
+  --bg:#f5f7f8;
+  --card:#ffffff;
+  --text:#17202a;
+  --muted:#667085;
+  --primary:#163f35;
+  --primary2:#245b4d;
+  --accent:#c8a66a;
+  --line:#e6e8ec;
+  --soft:#f9fbfa;
+  --high:#0f766e;
+  --medium:#a16207;
+  --near:#027a48;
+  --mid:#b54708;
+  --far:#4f46e5;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Tahoma,Arial,sans-serif;
+  line-height:1.85;
+}
+.container{max-width:1180px;margin:auto;padding:26px}
+.hero{
+  background:linear-gradient(135deg,var(--primary),var(--primary2));
+  color:#fff;
+  border-radius:24px;
+  padding:48px;
+  box-shadow:0 12px 36px rgba(22,63,53,.16);
+  margin-bottom:24px;
+}
+.hero h1{margin:0 0 12px;font-size:34px;line-height:1.4}
+.hero p{margin:0;color:#e8f0ed;font-size:18px}
+.hero .sub{margin-top:18px;color:#dce9e5;font-size:14px}
+.section{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:30px;
+  margin-bottom:24px;
+}
+.section h2{margin:0 0 18px;color:var(--primary);font-size:26px}
+.section-intro{color:#475467;font-size:16px;margin-bottom:22px}
+.summary-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+.summary-box{
+  border:1px solid var(--line);
+  border-radius:15px;
+  padding:18px;
+  background:var(--soft);
+}
+.summary-box strong{display:block;color:var(--primary);font-size:19px;margin-bottom:4px}
+.summary-box span{color:var(--muted);font-size:13px}
+.initiative{
+  border:1px solid var(--line);
+  border-radius:17px;
+  padding:22px;
+  margin:16px 0;
+  background:#fff;
+}
+.initiative h3{
+  margin:0 0 10px;
+  color:#1d453b;
+  font-size:20px;
+}
+.initiative p{margin:7px 0;color:#475467}
+.label{font-weight:700;color:#344054}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.tag{
+  display:inline-block;
+  padding:5px 10px;
+  border-radius:999px;
+  font-size:12px;
+  background:#f2f4f7;
+  color:#475467;
+}
+.tag.high{background:#e7f6f3;color:var(--high)}
+.tag.med{background:#fff4df;color:var(--medium)}
+.tag.near{background:#ecfdf3;color:var(--near)}
+.tag.mid{background:#fff7ed;color:var(--mid)}
+.tag.far{background:#eef2ff;color:var(--far)}
+.callout{
+  border-right:4px solid var(--accent);
+  background:#fffaf0;
+  border-radius:12px;
+  padding:18px 20px;
+  color:#4b5563;
+  margin-top:18px;
+}
+.index{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+.index div{
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:14px;
+  background:#fbfcfc;
+}
+.index strong{color:var(--primary)}
+.footer{text-align:center;color:#98a2b3;font-size:12px;padding:8px 0 28px}
+@media(max-width:850px){
+  .summary-grid,.index{grid-template-columns:1fr}
+  .hero{padding:30px}
+  .hero h1{font-size:27px}
+  .container{padding:14px}
+}
+@media print{
+  body{background:#fff}
+  .container{max-width:none;padding:0}
+  .hero,.section{box-shadow:none}
+  .initiative{break-inside:avoid}
+}
+
+.category-cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin:18px 0 28px;
+}
+.category-card{
+  border:1px solid var(--line);
+  background:#fbfcfc;
+  border-radius:14px;
+  padding:15px;
+}
+.category-card strong{
+  display:block;
+  color:var(--primary);
+  font-size:15px;
+  line-height:1.6;
+}
+.category-card span{
+  display:block;
+  color:var(--muted);
+  font-size:12px;
+  margin-top:5px;
+}
+@media(max-width:850px){.category-cards{grid-template-columns:1fr}}
+
+.table-wrap{overflow-x:auto}
+.priority-table{
+  width:100%;
+  min-width:1050px;
+  border-collapse:separate;
+  border-spacing:0;
+  border:1px solid var(--line);
+  border-radius:14px;
+  overflow:hidden;
+  background:#fff;
+}
+.priority-table th{
+  background:#f5f7f9;
+  color:#23324a;
+  font-size:14px;
+  font-weight:700;
+  padding:16px 14px;
+  text-align:right;
+  border-bottom:1px solid var(--line);
+}
+.priority-table td{
+  padding:15px 14px;
+  vertical-align:top;
+  border-bottom:1px solid var(--line);
+  color:#475467;
+  font-size:13px;
+  line-height:1.75;
+}
+.priority-table tr:last-child td{border-bottom:none}
+.priority-table tbody tr:hover{background:#fbfcfd}
+.priority-table th:first-child,
+.priority-table td:first-child{
+  width:74px;
+  text-align:center;
+}
+.priority-table th:nth-child(2){min-width:210px}
+.priority-table th:nth-child(3){min-width:300px}
+.priority-table th:nth-child(4){min-width:230px}
+.priority-table th:nth-child(5){min-width:135px}
+.priority-table th:nth-child(6){min-width:105px}
+.priority-rank{
+  display:inline-flex;
+  width:34px;height:34px;
+  align-items:center;justify-content:center;
+  border-radius:50%;
+  background:var(--primary);
+  color:#fff;
+  font-weight:700;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<section class="hero">
+<h1>التقرير النهائي الشامل للمبادرات الإبداعية والتسويقية لإطلاق معهد ابن مالك</h1>
+<p>عرض تفصيلي للمبادرات المقترحة لدعم الوصول، التسجيل، التحويل، بناء الثقة، وتعزيز تجربة الطالب.</p>
+<div class="sub">تجمع هذه النسخة جميع المبادرات في عرض تفصيلي، مع ترقيم متسلسل للمبادرات وجدول موحد يرتبها وفق الأثر المتوقع وقرب التنفيذ وسهولة الإطلاق.</div>
+</section>
+<section class="section">
+<h2>1. نظرة عامة</h2>
+<p class="section-intro">
+    تتوزع المبادرات على مجموعة من المسارات المتكاملة: هندسة موسم التسجيل، تنشيط القنوات، تقديم منتجات قصيرة، الفعاليات العلمية، تجربة الدراسة قبل الالتحاق، التفاعل والاختبارات، المحتوى الإبداعي، السفراء والإحالات، إعادة استهداف الجمهور السابق، تيسير التسجيل، والاحتفاظ بالطالب.
+  </p>
+<div class="summary-grid">
+<div class="summary-box"><strong>60 مبادرة</strong><span>مجمعة من الاجتماعات الثلاثة الأولى</span></div>
+<div class="summary-box"><strong>10 محاور</strong><span>تغطي رحلة الجمهور والطالب</span></div>
+<div class="summary-box"><strong>3 آفاق زمنية</strong><span>قريب، متوسط، بعيد</span></div>
+<div class="summary-box"><strong>تركيز مزدوج</strong><span>نمو التسجيل + بناء أصل مؤسسي</span></div>
+</div>
+</section>
+<section class="section">
+<h2>2. خريطة المحاور</h2>
+<div class="index">
+<div><strong>1.</strong> هندسة موسم التسجيل والقنوات</div>
+<div><strong>2.</strong> البرامج والمسارات التعليمية القصيرة</div>
+<div><strong>3.</strong> الفعاليات العلمية والمعرفية</div>
+<div><strong>4.</strong> تجربة الدراسة قبل الالتحاق</div>
+<div><strong>5.</strong> الأدوات والتحديات التفاعلية</div>
+<div><strong>6.</strong> المحتوى الإبداعي وبناء الثقة</div>
+<div><strong>7.</strong> الشراكات والسفراء والإحالات</div>
+<div><strong>8.</strong> تنشيط الجمهور السابق والاستقطاب</div>
+<div><strong>9.</strong> تيسير التسجيل وقرار الالتحاق</div>
+<div><strong>10.</strong> الاحتفاظ بالطالب واستمراريته</div>
+</div>
+</section><section class="section priority-master"><h2>3. الجدول الشامل للمبادرات حسب أولوية الإطلاق</h2><p class="section-intro">ترتيب الأولوية أدناه يجمع بين ثلاثة اعتبارات: حجم الأثر المتوقع، قرب التنفيذ من دورة التسجيل الحالية، وسهولة وسرعة الإطلاق. لذلك تتقدم المبادرات عالية الأثر والقابلة للتنفيذ سريعًا، بينما تتراجع المبادرات التي تحتاج تطويرًا تقنيًا أو تشغيليًا أو مؤسسيًا أطول.</p><div class="table-wrap"><table class="priority-table"><thead><tr><th>الأولوية</th><th>المبادرة</th><th>الفكرة العملية</th><th>الهدف</th><th>الأثر المتوقع</th><th>المدى</th></tr></thead><tbody><tr><td><span class="priority-rank">1</span></td><td><strong>تحويل الخريجين والطلاب المتفوقين إلى Social Proof فعلي</strong></td><td>بحث أعده الطالب، مسألة أصبح قادرًا على شرحها، مادة أنتجها، أو تطبيق فعلي لما تعلمه.</td><td>إثبات أثر الدراسة على الطالب.</td><td>أثر مرتفع جدًا</td><td>قريب</td></tr><tr><td><span class="priority-rank">2</span></td><td><strong>إعادة استهداف المسجلين السابقين</strong></td><td>تقسيم القاعدة إلى شرائح بدل إرسال رسالة واحدة للجميع، وبناء خطاب مناسب لكل شريحة.</td><td>استثمار Leads موجودة بالفعل بدل البدء كل مرة من جمهور بارد.</td><td>أثر مرتفع جدًا</td><td>قريب جدًا</td></tr><tr><td><span class="priority-rank">3</span></td><td><strong>ملتقى المتفوقين</strong></td><td>مناقشة كيف درس الطالب، كيف نظم وقته، كيف تغلب على الصعوبات، وما الذي وصل إليه، ثم إعادة توظيف اللقاء في المحتوى.</td><td>تحويل نجاح الطلاب إلى Social Proof واقعي ومفيد.</td><td>أثر مرتفع</td><td>قريب</td></tr><tr><td><span class="priority-rank">4</span></td><td><strong>منظومة Voice of Customer من المبيعات والدعم</strong></td><td>تقرير دوري يصنف أكثر الأسئلة، أسباب عدم الدفع، صعوبات التسجيل، مشكلات التجربة، واللغة التي يستخدمها الجمهور في التعبير عنها.</td><td>جعل المحتوى والرسائل والحملات مبنية على صوت العميل الفعلي.</td><td>أثر مرتفع جدًا</td><td>قريب ومستمر</td></tr><tr><td><span class="priority-rank">5</span></td><td><strong>تجربة «درس كامل من داخل المعهد»</strong></td><td>فيديو الدرس، التفريغ، التطبيق أو التمرين، والمواد المصاحبة ذات الصلة.</td><td>إزالة الغموض عن المنتج قبل الدفع.</td><td>أثر مرتفع جدًا</td><td>قريب</td></tr><tr><td><span class="priority-rank">6</span></td><td><strong>حضور مدارسة تفاعلية حقيقية</strong></td><td>مشاهدة النقاش، التطبيق، الرجوع للمراجع، ومستوى الطلاب الفعلي.</td><td>إثبات جودة التجربة التعليمية بدل الاكتفاء بوصفها.</td><td>أثر مرتفع جدًا</td><td>قريب</td></tr><tr><td><span class="priority-rank">7</span></td><td><strong>حملة إعلانية مخصصة لتليجرام</strong></td><td>إعلانات موجهة إلى القناة أو المحتوى التمهيدي، ثم قياس التسجيل والدفع الناتج من الجمهور القادم منها.</td><td>الاستثمار في قناة ذات قابلية تحويل قوية بدل النظر إليها فقط كقناة نشر.</td><td>أثر مرتفع محتمل</td><td>قريب</td></tr><tr><td><span class="priority-rank">8</span></td><td><strong>منظومة Tracking للقنوات والمحتوى</strong></td><td>فصل القنوات والقطع الإبداعية والحملات لتمييز ما ينتج تسجيلات فعلية.</td><td>الانتقال من تقييم المحتوى بالوصول والتفاعل فقط إلى ربطه بالتسجيل والتحويل.</td><td>أثر مرتفع</td><td>قريب</td></tr><tr><td><span class="priority-rank">9</span></td><td><strong>Webinar شهري خلال فترة التسجيل</strong></td><td>اختيار موضوعات ذات صلة باهتمامات الجمهور، مع ربط اللقاء بالتعريف بالمعهد أو إتاحة خطوة تالية واضحة.</td><td>تجميع الجمهور حول المعهد وتحويل الجمهور الدافئ إلى مهتمين أقرب للقرار.</td><td>أثر متوسط–مرتفع</td><td>قريب</td></tr><tr><td><span class="priority-rank">10</span></td><td><strong>إضافة المصادر للمحتوى العلمي</strong></td><td>إسناد المعلومات التي تحتاج إلى مصدر أو توضيح أنها مراجعة علميًا.</td><td>رفع الموثوقية العلمية والاستجابة لتساؤلات الجمهور حول المرجعية.</td><td>أثر متوسط–مرتفع</td><td>قريب جدًا</td></tr><tr><td><span class="priority-rank">11</span></td><td><strong>تفعيل TikTok من الأرشيف المرئي</strong></td><td>إعادة تحرير المقاطع إلى صيغ قصيرة، واختبار الموضوعات التي تحقق مشاهدة واحتفاظًا أعلى.</td><td>فتح قناة وصول جديدة بسرعة وبتكلفة إنتاج محدودة.</td><td>أثر متوسط–مرتفع</td><td>قريب</td></tr><tr><td><span class="priority-rank">12</span></td><td><strong>بناء موسم التسجيل حول محتوى ذي قدرة على الانتشار</strong></td><td>زيادة نسبة المحتوى القابل للمشاركة والنقاش، وربط أجزاء من هذا المحتوى تدريجيًا برسائل المعهد وتجربته وبرنامجه.</td><td>توسيع دائرة الوعي بالمعهد وجذب جمهور جديد قبل مرحلة الطلب المباشر بالتسجيل.</td><td>أثر مرتفع</td><td>قريب ومستمر</td></tr><tr><td><span class="priority-rank">13</span></td><td><strong>حملة «فهم التراث يبدأ من فهم اللغة»</strong></td><td>اختيار مقاطع من كتب التراث وبيان أثر الفهم اللغوي في فهم النص.</td><td>ربط دراسة العربية مباشرة بحاجات طالب العلم الشرعي.</td><td>أثر مرتفع جدًا</td><td>قريب</td></tr><tr><td><span class="priority-rank">14</span></td><td><strong>تطوير Telegram كقناة تحويل</strong></td><td>محتوى مخصص، قصص، إعلانات عند الحاجة، ورسائل مرتبطة بالتسجيل والدراسة. ويمكن أن يشمل ذلك ستوريز تليجرام لعرض شهادات الطلاب والأرقام والتحديثات والمواد القصيرة.</td><td>الاستفادة من جمهور موجود لديه قابلية أعلى للانتقال إلى التسجيل والدفع.</td><td>أثر مرتفع</td><td>قريب–متوسط</td></tr><tr><td><span class="priority-rank">15</span></td><td><strong>«اصطد الخطأ اللغوي»</strong></td><td>أخطاء في اللافتات والكتب والمواد المطبوعة، ثم إعادة نشرها مع التصحيح.</td><td>إشراك الجمهور في صناعة المحتوى.</td><td>أثر مرتفع على التفاعل</td><td>قريب</td></tr><tr><td><span class="priority-rank">16</span></td><td><strong>تحديات العروض والشعر</strong></td><td>اكتشاف موضع الكسر، استكمال بيت مشهور، أو تحديد البحر الشعري.</td><td>زيادة المشاركة وجعل المعرفة اللغوية أكثر حيوية.</td><td>أثر متوسط–مرتفع</td><td>قريب</td></tr><tr><td><span class="priority-rank">17</span></td><td><strong>مسابقة فيديو لغوي</strong></td><td>ربط الفيديو باسم معهد ابن مالك، مع استخدام مقاعد مجانية أو جوائز كحافز للمشاركة.</td><td>إنتاج UGC وزيادة الانتشار وربط الجمهور بالعلامة.</td><td>أثر متوسط–مرتفع</td><td>قريب</td></tr><tr><td><span class="priority-rank">18</span></td><td><strong>«العربية في دقيقة»</strong></td><td>Reel أو Whiteboard أو Motion خفيف بدل الملخصات التقليدية.</td><td>تقديم علم نافع في صيغة سهلة الاستهلاك والمشاركة.</td><td>أثر متوسط–مرتفع</td><td>قريب</td></tr><tr><td><span class="priority-rank">19</span></td><td><strong>استضافة أحد الخريجين في لقاء علمي</strong></td><td>تقديم خريج مميز في محاضرة أو لقاء، مع التعريف بأنه أحد مخرجات المعهد.</td><td>جعل الخريج نفسه دليلًا على جودة المخرج العلمي.</td><td>أثر مرتفع</td><td>قريب</td></tr><tr><td><span class="priority-rank">20</span></td><td><strong>تحويل «قل ولا تقل» و«ما الفرق؟» إلى فيديو تطبيقي</strong></td><td>كتابة الخطأ، شطبه، كتابة الصواب، وشرح الفرق أمام المشاهد.</td><td>زيادة الجاذبية والاحتفاظ بالمشاهدة.</td><td>أثر متوسط</td><td>قريب جدًا</td></tr><tr><td><span class="priority-rank">21</span></td><td><strong>تخصيص محتوى إنستغرام</strong></td><td>زيادة الكاروسيل، التصميمات البصرية، الريلز المناسبة للمنصة، وبناء اختبارات خاصة بالجمهور الخليجي الموجود عليها.</td><td>رفع الاستفادة من القناة وتحسين الوصول إلى جمهور نوعي.</td><td>أثر متوسط–مرتفع</td><td>قريب</td></tr><tr><td><span class="priority-rank">22</span></td><td><strong>استهداف الجمهور الخليجي بصورة أكثر تخصيصًا</strong></td><td>زيادة حضور الجمهور الخليجي من خلال قنوات ورسائل أكثر ملاءمة له.</td><td>تحسين جودة التسجيلات وليس عددها فقط.</td><td>أثر مرتفع تجاريًا</td><td>قريب–متوسط</td></tr><tr><td><span class="priority-rank">23</span></td><td><strong>«الشبهات والإشكالات اللغوية في القرآن»</strong></td><td>تناول مواضع قد تبدو إشكالية لغويًا أو نحويًا ثم بيان تفسيرها.</td><td>إظهار أثر النحو واللغة في فهم القرآن.</td><td>أثر مرتفع</td><td>قريب ومستمر</td></tr><tr><td><span class="priority-rank">24</span></td><td><strong>«المتشابهات والتعبير القرآني»</strong></td><td>مقارنة مواضع متشابهة مع اختلاف التعبير، وشرح الدلالة اللغوية للاختلاف.</td><td>إبراز قيمة علوم العربية في فهم النص القرآني.</td><td>أثر مرتفع</td><td>قريب ومستمر</td></tr><tr><td><span class="priority-rank">25</span></td><td><strong>Micro-Influencers في الخليج</strong></td><td>التعاون مع مؤثرين متخصصين ذوي جمهور مناسب في السعودية والخليج.</td><td>الوصول إلى شرائح جديدة ذات اهتمام وقدرة شرائية مناسبة.</td><td>أثر مرتفع محتمل</td><td>قريب</td></tr><tr><td><span class="priority-rank">26</span></td><td><strong>«يوم في حياة طالب ابن مالك»</strong></td><td>إظهار دخول المنصة، مشاهدة الدرس، المذاكرة، استخدام المواد، أداء المهام، وطبيعة التفاعل.</td><td>جعل تجربة غير مرئية قابلة للفهم والتخيل قبل الالتحاق.</td><td>أثر مرتفع جدًا</td><td>قريب–متوسط</td></tr><tr><td><span class="priority-rank">27</span></td><td><strong>جروب فيسبوك ومجتمع تفاعلي</strong></td><td>محتوى دوري للنقاش، أسئلة تطبيقية، مشاركات طلاب، وإعادة توظيف أفضل النقاشات في محتوى الصفحة.</td><td>بناء مجتمع حواري يزيد الولاء والانتشار العضوي ويقرب الجمهور من العلامة.</td><td>أثر متوسط–مرتفع</td><td>قريب</td></tr><tr><td><span class="priority-rank">28</span></td><td><strong>الاختبارات اللغوية المصغرة</strong></td><td>أن تتضمن تجربة جذابة تدفع المستخدم لإكمال الاختبار ومعرفة نتيجته.</td><td>رفع التفاعل ومساعدة المستخدم على اكتشاف مستواه.</td><td>أثر مرتفع</td><td>قريب</td></tr><tr><td><span class="priority-rank">29</span></td><td><strong>«الكلمة ذات المعاني المتعددة»</strong></td><td>عرض الكلمات التي تحمل أكثر من معنى بحسب السياق، خاصة في النص القرآني.</td><td>إظهار دقة السياق وثراء الدلالة.</td><td>أثر متوسط–مرتفع</td><td>قريب</td></tr><tr><td><span class="priority-rank">30</span></td><td><strong>استخدام المقاعد المجانية مع المؤثرين أو المسابقات</strong></td><td>تحويل المقعد المجاني من منحة منفصلة إلى أداة ترويج مرتبطة بمسابقة أو تعاون.</td><td>تعظيم العائد التسويقي من المقاعد المجانية.</td><td>أثر متوسط–مرتفع</td><td>قريب</td></tr><tr><td><span class="priority-rank">31</span></td><td><strong>برنامج «تعلم ممن سبقك» لتوجيه الأقران</strong></td><td>مجموعات صغيرة أو Mentor لكل مجموعة، مع إطار واضح للأسئلة والتوجيه ومزايا رمزية للمرشد.</td><td>تقليل التيه في البداية وتحسين اندماج الطالب الجديد.</td><td>أثر مرتفع</td><td>قريب–متوسط</td></tr><tr><td><span class="priority-rank">32</span></td><td><strong>استعراض المنصة وطريقة استخدامها</strong></td><td>فيديو أو جولة Screen Recording توضح رحلة الاستخدام.</td><td>خفض الغموض وتقليل الاستفسارات التشغيلية.</td><td>أثر متوسط</td><td>قريب</td></tr><tr><td><span class="priority-rank">33</span></td><td><strong>استعراض عملي لخطوات الاشتراك</strong></td><td>شرح واضح لما يحدث من بداية التسجيل حتى الدخول للمنصة.</td><td>خفض الارتباك وتقليل الأسئلة المتكررة.</td><td>أثر متوسط</td><td>قريب</td></tr><tr><td><span class="priority-rank">34</span></td><td><strong>تقليل خطوات التسجيل</strong></td><td>تقليل عدد الحقول أو تقسيم التسجيل إلى مرحلتين إذا كان ذلك يخفض الاحتكاك.</td><td>تقليل Drop-off أثناء التسجيل.</td><td>أثر مرتفع</td><td>قريب–متوسط</td></tr><tr><td><span class="priority-rank">35</span></td><td><strong>اختبار YouTube Ads</strong></td><td>اختبارات محدودة بميزانيات قابلة للقياس على قنوات وموضوعات ذات صلة، ومقارنة تكلفة الاستحواذ بالقنوات الأخرى.</td><td>تنويع قنوات الاستحواذ واكتشاف مصادر جديدة للجمهور المؤهل.</td><td>أثر محتمل متوسط–مرتفع</td><td>قريب</td></tr><tr><td><span class="priority-rank">36</span></td><td><strong>تخصيص المحتوى بحسب المنصة</strong></td><td>دور مخصص لـTelegram في التحويل، وTikTok للوصول، وYouTube للمحتوى طويل العمر، مع اختبار الصيغ المناسبة لكل قناة.</td><td>رفع كفاءة القنوات وتحسين علاقتها بالمراحل المختلفة من رحلة العميل.</td><td>أثر مرتفع</td><td>قريب–متوسط</td></tr><tr><td><span class="priority-rank">37</span></td><td><strong>«قصة كتاب»</strong></td><td>تقديم الكتاب من خلال القصة أو الدافع أو السياق الذي أدى إلى تأليفه.</td><td>تحويل التعريف بالكتب إلى Storytelling أكثر تشويقًا.</td><td>أثر متوسط</td><td>قريب</td></tr><tr><td><span class="priority-rank">38</span></td><td><strong>العربية والهوية وتربية الأبناء</strong></td><td>قطع نثرية، أبيات، أو محتوى يساعد ولي الأمر على إدخال العربية إلى الحياة اليومية.</td><td>فتح مساحة اهتمام جديدة تتجاوز طالب العلم التقليدي.</td><td>أثر متوسط–مرتفع</td><td>قريب–متوسط</td></tr><tr><td><span class="priority-rank">39</span></td><td><strong>«نقولها شعرًا»</strong></td><td>التعبير عن موقف أو معنى يومي من خلال بيت شعر مناسب.</td><td>ربط الشعر بالحياة اليومية وإظهار حيوية التراث الشعري.</td><td>أثر متوسط</td><td>قريب</td></tr><tr><td><span class="priority-rank">40</span></td><td><strong>«خصائص العربية»</strong></td><td>عرض ظواهر ومفردات تبرز ما تتميز به العربية بصورة علمية عملية.</td><td>إظهار عمق اللغة بعيدًا عن الخطاب العام حول «أهمية العربية».</td><td>أثر متوسط</td><td>قريب</td></tr><tr><td><span class="priority-rank">41</span></td><td><strong>«رحلة كلمة»</strong></td><td>تتبع تطور معنى أو استخدام كلمة عبر الزمن.</td><td>تقديم اللغة في صورة قصصية مرتبطة بالتاريخ والدلالة.</td><td>أثر متوسط</td><td>قريب</td></tr><tr><td><span class="priority-rank">42</span></td><td><strong>«أصل الكلمة ومشتقاتها»</strong></td><td>عرض الجذر والمشتقات والعلاقات بين الكلمات.</td><td>إظهار ثراء النظام الاشتقاقي في العربية.</td><td>أثر متوسط</td><td>قريب</td></tr><tr><td><span class="priority-rank">43</span></td><td><strong>«معوقات طلب العلم»</strong></td><td>سلسلة تتناول ما يعوق الطالب عن الاستمرار في التعلم.</td><td>مخاطبة واقع المتعلم ومشكلاته اليومية، لا المادة العلمية وحدها.</td><td>أثر متوسط</td><td>قريب</td></tr><tr><td><span class="priority-rank">44</span></td><td><strong>«أخطاء المتعلمين»</strong></td><td>تناول الأخطاء الشائعة في تعلم النحو والصرف والعربية بصورة أوسع.</td><td>تقديم محتوى تشخيصي يلمس مشكلات الجمهور مباشرة.</td><td>أثر متوسط</td><td>قريب</td></tr><tr><td><span class="priority-rank">45</span></td><td><strong>لقاءات مباشرة مع المدرسين والمشايخ</strong></td><td>لقاءات دورية مرئية أو صوتية، تتجاوز مجرد الردود النصية أو إجابات اللجنة العلمية.</td><td>رفع القيمة المدركة للعلاقة التعليمية وتقوية ارتباط الطالب بالمعهد.</td><td>أثر مرتفع</td><td>متوسط</td></tr><tr><td><span class="priority-rank">46</span></td><td><strong>اختبار بنتيجة قابلة للمشاركة</strong></td><td>نتيجة جذابة ومفهومة لا تعتمد على فكرة «أنت تحتاج المعهد بنسبة كذا»، بل تصف مستوى المستخدم بصورة يمكن مشاركتها.</td><td>خلق Viral Loop حول الاختبار.</td><td>أثر مرتفع محتمل</td><td>قريب–متوسط</td></tr><tr><td><span class="priority-rank">47</span></td><td><strong>برنامج إحالة للطلاب</strong></td><td>إتاحة آلية للطالب لترشيح آخرين مقابل نقاط أو خصومات أو حوافز.</td><td>تحويل قاعدة الطلاب الحالية إلى قناة استحواذ.</td><td>أثر مرتفع</td><td>متوسط</td></tr><tr><td><span class="priority-rank">48</span></td><td><strong>أرشيف رقمي للقاءات والندوات السابقة</strong></td><td>تصنيف المحتوى بحسب الموضوع والمستوى، وإتاحته من خلال صفحة أو Playlist أو مركز معرفي واضح.</td><td>تحويل المحتوى السابق إلى أصل معرفي دائم يخدم الثقة والاكتشاف العضوي.</td><td>أثر متوسط–مرتفع</td><td>متوسط–بعيد</td></tr><tr><td><span class="priority-rank">49</span></td><td><strong>سلسلة YouTube تعليمية من أحد مقررات المعهد</strong></td><td>بناء Playlist تعطي قيمة مستقلة، وتنتهي بإتاحة الانتقال إلى الدراسة الأعمق داخل المعهد.</td><td>جذب الباحثين عن تعلم العربية وبناء الثقة قبل طلب الالتحاق.</td><td>أثر مرتفع</td><td>متوسط</td></tr><tr><td><span class="priority-rank">50</span></td><td><strong>تجربة شهر مع إمكانية الاسترداد</strong></td><td>إتاحة فترة بداية يستطيع الطالب بعدها استرداد الرسوم إذا وجد التجربة غير مناسبة.</td><td>تقليل المخاطرة المدركة في قرار الدفع.</td><td>أثر محتمل مرتفع</td><td>متوسط</td></tr><tr><td><span class="priority-rank">51</span></td><td><strong>توظيف البرنامج القصير أو التمهيدي كمدخل للمعهد</strong></td><td>أن يقدم البرنامج قيمة حقيقية لكنه يفتح لدى المتعلم الحاجة الطبيعية لاستكمال التعلم داخل المعهد.</td><td>خفض حاجز الدخول وتوسيع قاعدة المهتمين المؤهلين.</td><td>أثر مرتفع</td><td>متوسط</td></tr><tr><td><span class="priority-rank">52</span></td><td><strong>رفع معدل إتمام البرنامج</strong></td><td>بريد، رسائل، تذكيرات، حوافز، وربما جوائز مرحلية.</td><td>تحسين Completion Rate وRetention.</td><td>أثر مرتفع</td><td>متوسط</td></tr><tr><td><span class="priority-rank">53</span></td><td><strong>مدونة علمية لتحسين الظهور العضوي SEO</strong></td><td>نشر مقالات مرتبطة بالكلمات المفتاحية والأسئلة الفعلية، وربطها بالمحتوى التعليمي وصفحات المعهد.</td><td>بناء مصدر زيارات مستدام لا يعتمد على الإنفاق الإعلاني وحده.</td><td>أثر مرتفع طويل المدى</td><td>متوسط</td></tr><tr><td><span class="priority-rank">54</span></td><td><strong>حملة مشتركة حول كتب التراث</strong></td><td>اختيار نصوص أو كتب من مجالات متعددة وبيان كيف تخدم العربية فهمها، مع توحيد الفكرة وتكييف المحتوى لكل معهد.</td><td>تعزيز موقع ابن مالك باعتباره أساسًا يخدم طالب العلوم الشرعية.</td><td>أثر مرتفع على التموضع</td><td>متوسط–بعيد</td></tr><tr><td><span class="priority-rank">55</span></td><td><strong>سلسلة مؤسسية بأسلوب سينمائي</strong></td><td>موشن جرافيك، تصوير واقعي، سرد قصصي، وهوية ثابتة تستخدم في القطع الكبرى للبراند.</td><td>بناء صورة ذهنية راقية ومتماسكة لمعهد ابن مالك.</td><td>أثر مرتفع على صورة البراند</td><td>بعيد</td></tr><tr><td><span class="priority-rank">56</span></td><td><strong>استحداث دور المعيد من الطلاب المتفوقين</strong></td><td>معايير اختيار واضحة، مهام محددة، وإمكانية ربط الدور بمزايا أو حوافز مناسبة.</td><td>خلق مسار تطور للطالب والاستفادة من المتفوقين في دعم زملائهم.</td><td>أثر مرتفع على الولاء</td><td>بعيد</td></tr><tr><td><span class="priority-rank">57</span></td><td><strong>بودكاست أو برنامج دوري مع اللجنة العلمية</strong></td><td>برنامج مرئي وصوتي منتظم بهوية وعناوين ثابتة، مع إعادة تقطيع الحلقات إلى مقاطع قصيرة.</td><td>بناء حضور إعلامي وعلمي مستدام للجنة والمعهد.</td><td>أثر مرتفع طويل المدى</td><td>بعيد</td></tr><tr><td><span class="priority-rank">58</span></td><td><strong>Gamification وحوافز الاستمرار</strong></td><td>استخدام نقاط ومكافآت وحوافز مرحلية داخل تجربة التعلم.</td><td>زيادة تكرار الدخول والاستمرار وإكمال المهام.</td><td>أثر مرتفع على الاحتفاظ</td><td>متوسط–بعيد</td></tr><tr><td><span class="priority-rank">59</span></td><td><strong>اختبار استهداف غير الناطقين بالعربية</strong></td><td>اختبار محتوى أو ترجمات أو Subtitles أو Transcripts لقياس وجود طلب من جمهور غير عربي.</td><td>استكشاف فرصة توسع دولية قبل بناء منتج كامل لها.</td><td>أثر محتمل مرتفع</td><td>بعيد</td></tr><tr><td><span class="priority-rank">60</span></td><td><strong>السعي لاعتماد رسمي لشهادات المعهد</strong></td><td>تقييم الجهات الممكنة والمتطلبات والتكلفة والقيمة الفعلية للاعتماد قبل الدخول في المسار.</td><td>رفع القيمة المؤسسية للشهادة واستقطاب شرائح تعطي الاعتماد وزنًا في قرارها.</td><td>أثر استراتيجي محتمل</td><td>بعيد</td></tr></tbody></table></div></section>
+<section class="section">
+<h2>4. هندسة موسم التسجيل والقنوات</h2><div class="category-cards"><div class="category-card"><strong>1. بناء موسم التسجيل حول محتوى ذي قدرة على الانتشار</strong><span>أثر مرتفع — قريب ومستمر</span></div><div class="category-card"><strong>2. تخصيص المحتوى بحسب المنصة</strong><span>أثر مرتفع — قريب–متوسط</span></div><div class="category-card"><strong>3. تفعيل TikTok من الأرشيف المرئي</strong><span>أثر متوسط–مرتفع — قريب</span></div><div class="category-card"><strong>4. تطوير Telegram كقناة تحويل</strong><span>أثر مرتفع — قريب–متوسط</span></div><div class="category-card"><strong>5. منظومة Tracking للقنوات والمحتوى</strong><span>أثر مرتفع — قريب</span></div><div class="category-card"><strong>6. جروب فيسبوك ومجتمع تفاعلي</strong><span>أثر متوسط–مرتفع — قريب</span></div><div class="category-card"><strong>7. تخصيص محتوى إنستغرام</strong><span>أثر متوسط–مرتفع — قريب</span></div><div class="category-card"><strong>8. حملة إعلانية مخصصة لتليجرام</strong><span>أثر مرتفع محتمل — قريب</span></div><div class="category-card"><strong>9. اختبار YouTube Ads</strong><span>أثر محتمل متوسط–مرتفع — قريب</span></div><div class="category-card"><strong>10. مدونة علمية لتحسين الظهور العضوي SEO</strong><span>أثر مرتفع طويل المدى — متوسط</span></div></div>
+<div class="initiative">
+<h3>1. بناء موسم التسجيل حول محتوى ذي قدرة على الانتشار</h3>
+<p><span class="label">الفكرة:</span> ألا يقتصر موسم التسجيل على منشورات التعريف بالمعهد أو فتح وإغلاق التسجيل، بل يُبنى حول محتوى قادر على الوصول والمشاركة وخلق اهتمام مستمر حول العربية والمعهد.</p>
+<p><span class="label">التطبيق:</span> زيادة نسبة المحتوى القابل للمشاركة والنقاش، وربط أجزاء من هذا المحتوى تدريجيًا برسائل المعهد وتجربته وبرنامجه.</p>
+<p><span class="label">الهدف:</span> توسيع دائرة الوعي بالمعهد وجذب جمهور جديد قبل مرحلة الطلب المباشر بالتسجيل.</p>
+<p><span class="label">الأثر المتوقع:</span> زيادة الوصول العضوي، وتوسيع قاعدة الجمهور الدافئ الذي يمكن تحويله لاحقًا.</p>
+<div class="tags"><span class="tag high">أثر مرتفع</span><span class="tag near">قريب ومستمر</span></div>
+</div>
+<div class="initiative">
+<h3>2. تخصيص المحتوى بحسب المنصة</h3>
+<p><span class="label">الفكرة:</span> التعامل مع كل منصة بوصفها قناة لها طبيعة استخدام وجمهور وصيغة محتوى مختلفة، بدل نشر المحتوى نفسه في كل مكان.</p>
+<p><span class="label">التطبيق:</span> دور مخصص لـTelegram في التحويل، وTikTok للوصول، وYouTube للمحتوى طويل العمر، مع اختبار الصيغ المناسبة لكل قناة.</p>
+<p><span class="label">الهدف:</span> رفع كفاءة القنوات وتحسين علاقتها بالمراحل المختلفة من رحلة العميل.</p>
+<p><span class="label">الأثر المتوقع:</span> تحسين الوصول والتحويل وتقليل هدر المحتوى.</p>
+<div class="tags"><span class="tag high">أثر مرتفع</span><span class="tag mid">قريب–متوسط</span></div>
+</div>
+<div class="initiative">
+<h3>3. تفعيل TikTok من الأرشيف المرئي</h3>
+<p><span class="label">الفكرة:</span> استخدام المقاطع والفيديوهات الموجودة بالفعل لتشغيل حضور المعهد على TikTok دون انتظار دورة إنتاج جديدة بالكامل.</p>
+<p><span class="label">التطبيق:</span> إعادة تحرير المقاطع إلى صيغ قصيرة، واختبار الموضوعات التي تحقق مشاهدة واحتفاظًا أعلى.</p>
+<p><span class="label">الهدف:</span> فتح قناة وصول جديدة بسرعة وبتكلفة إنتاج محدودة.</p>
+<p><span class="label">الأثر المتوقع:</span> زيادة الانتشار بين شرائح جديدة واكتشاف أنماط محتوى قابلة للتوسع.</p>
+<div class="tags"><span class="tag med">أثر متوسط–مرتفع</span><span class="tag near">قريب</span></div>
+</div>
+<div class="initiative">
+<h3>4. تطوير Telegram كقناة تحويل</h3>
+<p><span class="label">الفكرة:</span> الانتقال من استخدام Telegram كقناة نشر إلى قناة تُبنى لها رحلة ومحتوى ووظيفة واضحة في التحويل.</p>
+<p><span class="label">التطبيق:</span> محتوى مخصص، قصص، إعلانات عند الحاجة، ورسائل مرتبطة بالتسجيل والدراسة. ويمكن أن يشمل ذلك ستوريز تليجرام لعرض شهادات الطلاب والأرقام والتحديثات والمواد القصيرة.</p>
+<p><span class="label">الهدف:</span> الاستفادة من جمهور موجود لديه قابلية أعلى للانتقال إلى التسجيل والدفع.</p>
+<p><span class="label">الأثر المتوقع:</span> رفع التحويل من الجمهور الدافئ وتقليل الاعتماد على الحملات الباردة.</p>
+<div class="tags"><span class="tag high">أثر مرتفع</span><span class="tag mid">قريب–متوسط</span></div>
+</div>
+<div class="initiative">
+<h3>5. منظومة Tracking للقنوات والمحتوى</h3>
+<p><span class="label">الفكرة:</span> قياس مصادر التسجيل بصورة منظمة باستخدام UTM أو ما يعادلها.</p>
+<p><span class="label">التطبيق:</span> فصل القنوات والقطع الإبداعية والحملات لتمييز ما ينتج تسجيلات فعلية.</p>
+<p><span class="label">الهدف:</span> الانتقال من تقييم المحتوى بالوصول والتفاعل فقط إلى ربطه بالتسجيل والتحويل.</p>
+<p><span class="label">الأثر المتوقع:</span> تحسين جودة قرارات القنوات والميزانيات والمحتوى.</p>
+<div class="tags"><span class="tag high">أثر مرتفع</span><span class="tag near">قريب</span></div>
+</div>
+<div class="initiative">
+<h3>6. جروب فيسبوك ومجتمع تفاعلي</h3>
+<p><span class="label">الفكرة:</span> إنشاء أو تفعيل مساحة مجتمعية على فيسبوك تدور حول تعلم العربية والأسئلة والتطبيقات، بدل اقتصار العلاقة على الصفحة الرسمية.</p>
+<p><span class="label">التطبيق:</span> محتوى دوري للنقاش، أسئلة تطبيقية، مشاركات طلاب، وإعادة توظيف أفضل النقاشات في محتوى الصفحة.</p>
+<p><span class="label">الهدف:</span> بناء مجتمع حواري يزيد الولاء والانتشار العضوي ويقرب الجمهور من العلامة.</p>
+<p><span class="label">الأثر المتوقع:</span> زيادة التفاعل المتكرر وبناء قاعدة مجتمع يمكن تنشيطها في مواسم التسجيل.</p>
+<div class="tags"><span class="tag high">أثر متوسط–مرتفع</span><span class="tag near">قريب</span></div>
+</div><div class="initiative">
+<h3>7. تخصيص محتوى إنستغرام</h3>
+<p><span class="label">الفكرة:</span> التعامل مع إنستغرام كقناة لها منطقها البصري وسلوك جمهورها، لا كنسخة من فيسبوك.</p>
+<p><span class="label">التطبيق:</span> زيادة الكاروسيل، التصميمات البصرية، الريلز المناسبة للمنصة، وبناء اختبارات خاصة بالجمهور الخليجي الموجود عليها.</p>
+<p><span class="label">الهدف:</span> رفع الاستفادة من القناة وتحسين الوصول إلى جمهور نوعي.</p>
+<p><span class="label">الأثر المتوقع:</span> زيادة الوصول والتفاعل وإمكانية رفع نسبة التسجيلات القادمة من إنستغرام.</p>
+<div class="tags"><span class="tag high">أثر متوسط–مرتفع</span><span class="tag near">قريب</span></div>
+</div><div class="initiative">
+<h3>8. حملة إعلانية مخصصة لتليجرام</h3>
+<p><span class="label">الفكرة:</span> تخصيص جزء من الميزانية لاستقطاب جمهور مناسب إلى قناة تليجرام عندما تثبت القناة كفاءة أعلى في التحويل.</p>
+<p><span class="label">التطبيق:</span> إعلانات موجهة إلى القناة أو المحتوى التمهيدي، ثم قياس التسجيل والدفع الناتج من الجمهور القادم منها.</p>
+<p><span class="label">الهدف:</span> الاستثمار في قناة ذات قابلية تحويل قوية بدل النظر إليها فقط كقناة نشر.</p>
+<p><span class="label">الأثر المتوقع:</span> رفع عائد الإنفاق إذا استمر تفوق القناة في التحويل.</p>
+<div class="tags"><span class="tag high">أثر مرتفع محتمل</span><span class="tag near">قريب</span></div>
+</div><div class="initiative">
+<h3>9. اختبار YouTube Ads</h3>
+<p><span class="label">الفكرة:</span> تجربة يوتيوب كقناة إعلانية مرئية للوصول إلى جمهور يشاهد بالفعل محتوى لغويًا أو شرعيًا.</p>
+<p><span class="label">التطبيق:</span> اختبارات محدودة بميزانيات قابلة للقياس على قنوات وموضوعات ذات صلة، ومقارنة تكلفة الاستحواذ بالقنوات الأخرى.</p>
+<p><span class="label">الهدف:</span> تنويع قنوات الاستحواذ واكتشاف مصادر جديدة للجمهور المؤهل.</p>
+<p><span class="label">الأثر المتوقع:</span> فتح قناة Acquisition جديدة إذا أثبتت كفاءتها.</p>
+<div class="tags"><span class="tag high">أثر محتمل متوسط–مرتفع</span><span class="tag near">قريب</span></div>
+</div><div class="initiative">
+<h3>10. مدونة علمية لتحسين الظهور العضوي SEO</h3>
+<p><span class="label">الفكرة:</span> بناء مكتبة مقالات لغوية وعلمية على الموقع تجيب عن أسئلة يبحث عنها الجمهور.</p>
+<p><span class="label">التطبيق:</span> نشر مقالات مرتبطة بالكلمات المفتاحية والأسئلة الفعلية، وربطها بالمحتوى التعليمي وصفحات المعهد.</p>
+<p><span class="label">الهدف:</span> بناء مصدر زيارات مستدام لا يعتمد على الإنفاق الإعلاني وحده.</p>
+<p><span class="label">الأثر المتوقع:</span> زيادة الزيارات العضوية وتكوين جمهور لإعادة الاستهداف على المدى المتوسط والطويل.</p>
+<div class="tags"><span class="tag high">أثر مرتفع طويل المدى</span><span class="tag mid">متوسط</span></div>
+</div></section>
+<section class="section">
+<h2>5. البرامج والمسارات التعليمية القصيرة</h2><div class="category-cards"><div class="category-card"><strong>11. سلسلة YouTube تعليمية من أحد مقررات المعهد</strong><span>أثر مرتفع — متوسط</span></div><div class="category-card"><strong>12. توظيف البرنامج القصير أو التمهيدي كمدخل للمعهد</strong><span>أثر مرتفع — متوسط</span></div></div>
+<div class="initiative">
+<h3>11. سلسلة YouTube تعليمية من أحد مقررات المعهد</h3>
+<p><span class="label">الفكرة:</span> اختيار جزء من مقرر موجود وتحويله إلى سلسلة تعليمية مجانية مختصرة، مثل «مقدمة في النحو» في عدة فيديوهات مترابطة.</p>
+<p><span class="label">التطبيق:</span> بناء Playlist تعطي قيمة مستقلة، وتنتهي بإتاحة الانتقال إلى الدراسة الأعمق داخل المعهد.</p>
+<p><span class="label">الهدف:</span> جذب الباحثين عن تعلم العربية وبناء الثقة قبل طلب الالتحاق.</p>
+<p><span class="label">الأثر المتوقع:</span> أصل محتوى طويل العمر يمكنه دعم الاكتساب العضوي باستمرار.</p>
+<div class="tags"><span class="tag high">أثر مرتفع</span><span class="tag mid">متوسط</span></div>
+</div>
+<div class="initiative">
+<h3>12. توظيف البرنامج القصير أو التمهيدي كمدخل للمعهد</h3>
+<p><span class="label">الفكرة:</span> استخدام منتج لغوي قصير أو مجاني كبوابة أولى للتعرف على ابن مالك قبل الالتزام بالمسار الطويل.</p>
+<p><span class="label">التطبيق:</span> أن يقدم البرنامج قيمة حقيقية لكنه يفتح لدى المتعلم الحاجة الطبيعية لاستكمال التعلم داخل المعهد.</p>
+<p><span class="label">الهدف:</span> خفض حاجز الدخول وتوسيع قاعدة المهتمين المؤهلين.</p>
+<p><span class="label">الأثر المتوقع:</span> بناء Funnel دائم بدل الاعتماد فقط على موسم التسجيل.</p>
+<div class="tags"><span class="tag high">أثر مرتفع</span><span class="tag mid">متوسط</span></div>
+</div>
+</section>
+<section class="section">
+<h2>6. الفعاليات العلمية والمعرفية المفتوحة</h2><div class="category-cards"><div class="category-card"><strong>13. Webinar شهري خلال فترة التسجيل</strong><span>أثر متوسط–مرتفع — قريب</span></div><div class="category-card"><strong>14. لقاءات مباشرة مع المدرسين والمشايخ</strong><span>أثر مرتفع — متوسط</span></div><div class="category-card"><strong>15. ملتقى المتفوقين</strong><span>أثر مرتفع — قريب</span></div><div class="category-card"><strong>16. أرشيف رقمي للقاءات والندوات السابقة</strong><span>أثر متوسط–مرتفع — متوسط–بعيد</span></div></div>
+<div class="initiative">
+<h3>13. Webinar شهري خلال فترة التسجيل</h3>
+<p><span class="label">الفكرة:</span> تنظيم لقاء معرفي مفتوح بصورة دورية أثناء موسم التسجيل.</p>
+<p><span class="label">التطبيق:</span> اختيار موضوعات ذات صلة باهتمامات الجمهور، مع ربط اللقاء بالتعريف بالمعهد أو إتاحة خطوة تالية واضحة.</p>
+<p><span class="label">الهدف:</span> تجميع الجمهور حول المعهد وتحويل الجمهور الدافئ إلى مهتمين أقرب للقرار.</p>
+<p><span class="label">الأثر المتوقع:</span> زيادة الثقة والاتصال المباشر مع الجمهور.</p>
+<div class="tags"><span class="tag high">أثر متوسط–مرتفع</span><span class="tag near">قريب</span></div>
+</div>
+<div class="initiative">
+<h3>14. لقاءات مباشرة مع المدرسين والمشايخ</h3>
+<p><span class="label">الفكرة:</span> زيادة فرص التفاعل المباشر بين الطلاب والمدرس الذي يقدم المادة العلمية.</p>
+<p><span class="label">التطبيق:</span> لقاءات دورية مرئية أو صوتية، تتجاوز مجرد الردود النصية أو إجابات اللجنة العلمية.</p>
+<p><span class="label">الهدف:</span> رفع القيمة المدركة للعلاقة التعليمية وتقوية ارتباط الطالب بالمعهد.</p>
+<p><span class="label">الأثر المتوقع:</span> دعم الثقة والولاء والاحتفاظ بالطالب.</p>
+<div class="tags"><span class="tag high">أثر مرتفع</span><span class="tag mid">متوسط</span></div>
+</div>
+<div class="initiative">
+<h3>15. ملتقى المتفوقين</h3>
+<p><span class="label">الفكرة:</span> لقاء يجمع المتفوقين من مستويات أو سنوات مختلفة، ويتناول أساليبهم وتجاربهم العملية.</p>
+<p><span class="label">التطبيق:</span> مناقشة كيف درس الطالب، كيف نظم وقته، كيف تغلب على الصعوبات، وما الذي وصل إليه، ثم إعادة توظيف اللقاء في المحتوى.</p>
+<p><span class="label">الهدف:</span> تحويل نجاح الطلاب إلى Social Proof واقعي ومفيد.</p>
+<p><span class="label">الأثر المتوقع:</span> رفع الثقة وإلهام الطلاب الحاليين والجدد.</p>
+<div class="tags"><span class="tag high">أثر مرتفع</span><span class="tag near">قريب</span></div>
+</div>
+<div class="initiative">
+<h3>16. أرشيف رقمي للقاءات والندوات السابقة</h3>
+<p><span class="label">الفكرة:</span> تحويل اللقاءات والندوات والويبنارات السابقة إلى مكتبة منظمة يمكن للجمهور الرجوع إليها بسهولة.</p>
+<p><span class="label">التطبيق:</span> تصنيف المحتوى بحسب الموضوع والمستوى، وإتاحته من خلال صفحة أو Playlist أو مركز معرفي واضح.</p>
+<p><span class="label">الهدف:</span> تحويل المحتوى السابق إلى أصل معرفي دائم يخدم الثقة والاكتشاف العضوي.</p>
+<p><span class="label">الأثر المتوقع:</span> زيادة عمر المحتوى وتعزيز المصداقية وتقليل هدر الأصول الموجودة.</p>
+<div class="tags"><span class="tag high">أثر متوسط–مرتفع</span><span class="tag far">متوسط–بعيد</span></div>
+</div></section>
+<section class="section">
+<h2>7. تجربة الدراسة قبل الالتحاق</h2><div class="category-cards"><div class="category-card"><strong>17. تجربة «درس كامل من داخل المعهد»</strong><span>أثر مرتفع جدًا — قريب</span></div><div class="category-card"><strong>18. حضور مدارسة تفاعلية حقيقية</strong><span>أثر مرتفع جدًا — قريب</span></div><div class="category-card"><strong>19. «يوم في حياة طالب ابن مالك»</strong><span>أثر مرتفع جدًا — قريب–متوسط</span></div><div class="category-card"><strong>20. استعراض المنصة وطريقة استخدامها</strong><span>أثر متوسط — قريب</span></div></div>
+<div class="initiative">
+<h3>17. تجربة «درس كامل من داخل المعهد»</h3>
+<p><span class="label">الفكرة:</span> إتاحة نموذج حقيقي ومتكامل مما يحصل عليه الطالب بدل عرض مقتطف دعائي قصير.</p>
+<p><span class="label">التطبيق:</span> فيديو الدرس، التفريغ، التطبيق أو التمرين، والمواد المصاحبة ذات الصلة.</p>
+<p><span class="label">الهدف:</span> إزالة الغموض عن المنتج قبل الدفع.</p>
+<p><span class="label">الأثر المتوقع:</span> رفع جودة قرار الالتحاق وتحسين التحويل.</p>
+<div class="tags"><span class="tag high">أثر مرتفع جدًا</span><span class="tag near">قريب</span></div>
+</div>
+<div class="initiative">
+<h3>18. حضور مدارسة تفاعلية حقيقية</h3>
+<p><span class="label">الفكرة:</span> دعوة المهتمين إلى حضور جلسة مدارسة فعلية مع طلاب متقدمين.</p>
+<p><span class="label">التطبيق:</span> مشاهدة النقاش، التطبيق، الرجوع للمراجع، ومستوى الطلاب الفعلي.</p>
+<p><span class="label">الهدف:</span> إثبات جودة التجربة التعليمية بدل الاكتفاء بوصفها.</p>
+<p><span class="label">الأثر المتوقع:</span> رفع الثقة وتقريب القرار بصورة قوية.</p>
+<div class="tags"><span class="tag high">أثر مرتفع جدًا</span><span class="tag near">قريب</span></div>
+</div>
+<div class="initiative">
+<h3>19. «يوم في حياة طالب ابن مالك»</h3>
+<p><span class="label">الفكرة:</span> محتوى وثائقي أو UGC يتابع رحلة الطالب داخل التجربة التعليمية.</p>
+<p><span class="label">التطبيق:</span> إظهار دخول المنصة، مشاهدة الدرس، المذاكرة، استخدام المواد، أداء المهام، وطبيعة التفاعل.</p>
+<p><span class="label">الهدف:</span> جعل تجربة غير مرئية قابلة للفهم والتخيل قبل الالتحاق.</p>
+<p><span class="label">الأثر المتوقع:</span> تحسين الفهم والثقة وتقليل الغموض حول البرنامج.</p>
+<div class="tags"><span class="tag high">أثر مرتفع جدًا</span><span class="tag mid">قريب–متوسط</span></div>
+</div>
+<div class="initiative">
+<h3>20. استعراض المنصة وطريقة استخدامها</h3>
+<p><span class="label">الفكرة:</span> شرح عملي للمنصة وخطوات الدخول والتصفح والوصول إلى الدروس.</p>
+<p><span class="label">التطبيق:</span> فيديو أو جولة Screen Recording توضح رحلة الاستخدام.</p>
+<p><span class="label">الهدف:</span> خفض الغموض وتقليل الاستفسارات التشغيلية.</p>
+<p><span class="label">الأثر المتوقع:</span> تحسين التجربة وتقليل الاحتكاك مع الدعم.</p>
+<div class="tags"><span class="tag med">أثر متوسط</span><span class="tag near">قريب</span></div>
+</div>
+</section>
+<section class="section">
+<h2>8. الأدوات والتحديات التفاعلية</h2><div class="category-cards"><div class="category-card"><strong>21. الاختبارات اللغوية المصغرة</strong><span>أثر مرتفع — قريب</span></div><div class="category-card"><strong>22. اختبار بنتيجة قابلة للمشاركة</strong><span>أثر مرتفع محتمل — قريب–متوسط</span></div><div class="category-card"><strong>23. تحديات العروض والشعر</strong><span>أثر متوسط–مرتفع — قريب</span></div><div class="category-card"><strong>24. «اصطد الخطأ اللغوي»</strong><span>أثر مرتفع على التفاعل — قريب</span></div><div class="category-card"><strong>25. مسابقة فيديو لغوي</strong><span>أثر متوسط–مرتفع — قريب</span></div></div>
+<div class="initiative">
+<h3>21. الاختبارات اللغوية المصغرة</h3>
+<p><span class="label">الفكرة:</span> اختبارات قصيرة في النحو والصرف والبلاغة والمعرفة اللغوية.</p>
+<p><span class="label">التطبيق:</span> أن تتضمن تجربة جذابة تدفع المستخدم لإكمال الاختبار ومعرفة نتيجته.</p>
+<p><span class="label">الهدف:</span> رفع التفاعل ومساعدة المستخدم على اكتشاف مستواه.</p>
+<p><span class="label">الأثر المتوقع:</span> زيادة المشاركة وخلق مدخل طبيعي للحديث عن التعلم.</p>
+<div class="tags"><span class="tag high">أثر مرتفع</span><span class="tag near">قريب</span></div>
+</div>
+<div class="initiative">
+<h3>22. اختبار بنتيجة قابلة للمشاركة</h3>
+<p><span class="label">الفكرة:</span> تطوير الاختبار بحيث تصبح النتيجة نفسها مادة قابلة للمشاركة على الحساب الشخصي.</p>
+<p><span class="label">التطبيق:</span> نتيجة جذابة ومفهومة لا تعتمد على فكرة «أنت تحتاج المعهد بنسبة كذا»، بل تصف مستوى المستخدم بصورة يمكن مشاركتها.</p>
+<p><span class="label">الهدف:</span> خلق Viral Loop حول الاختبار.</p>
+<p><span class="label">الأثر المتوقع:</span> توسيع الوصول العضوي مع كل مشاركة.</p>
+<div class="tags"><span class="tag high">أثر مرتفع محتمل</span><span class="tag mid">قريب–متوسط</span></div>
+</div>
+<div class="initiative">
+<h3>23. تحديات العروض والشعر</h3>
+<p><span class="label">الفكرة:</span> تحويل موضوعات الشعر والعروض إلى أنشطة تنافسية قصيرة.</p>
+<p><span class="label">التطبيق:</span> اكتشاف موضع الكسر، استكمال بيت مشهور، أو تحديد البحر الشعري.</p>
+<p><span class="label">الهدف:</span> زيادة المشاركة وجعل المعرفة اللغوية أكثر حيوية.</p>
+<p><span class="label">الأثر المتوقع:</span> تحسين Engagement وجذب الجمهور المهتم بالشعر.</p>
+<div class="tags"><span class="tag med">أثر متوسط–مرتفع</span><span class="tag near">قريب</span></div>
+</div>
+<div class="initiative">
+<h3>24. «اصطد الخطأ اللغوي»</h3>
+<p><span class="label">الفكرة:</span> دعوة الجمهور لاكتشاف وتصوير الأخطاء اللغوية من الواقع.</p>
+<p><span class="label">التطبيق:</span> أخطاء في اللافتات والكتب والمواد المطبوعة، ثم إعادة نشرها مع التصحيح.</p>
+<p><span class="label">الهدف:</span> إشراك الجمهور في صناعة المحتوى.</p>
+<p><span class="label">الأثر المتوقع:</span> زيادة UGC والمشاركة العضوية.</p>
+<div class="tags"><span class="tag high">أثر مرتفع على التفاعل</span><span class="tag near">قريب</span></div>
+</div>
+<div class="initiative">
+<h3>25. مسابقة فيديو لغوي</h3>
+<p><span class="label">الفكرة:</span> مسابقة يرسل فيها المشاركون فيديو قصيرًا ينفذون فيه مهمة لغوية محددة.</p>
+<p><span class="label">التطبيق:</span> ربط الفيديو باسم معهد ابن مالك، مع استخدام مقاعد مجانية أو جوائز كحافز للمشاركة.</p>
+<p><span class="label">الهدف:</span> إنتاج UGC وزيادة الانتشار وربط الجمهور بالعلامة.</p>
+<p><span class="label">الأثر المتوقع:</span> زيادة الوصول مع إنتاج محتوى من الجمهور نفسه.</p>
+<div class="tags"><span class="tag med">أثر متوسط–مرتفع</span><span class="tag near">قريب</span></div>
+</div>
+</section>
+<section class="section">
+<h2>9. المحتوى الإبداعي وإبراز القيمة والثقة</h2><div class="category-cards"><div class="category-card"><strong>26. «العربية في دقيقة»</strong><span>أثر متوسط–مرتفع — قريب</span></div><div class="category-card"><strong>27. تحويل «قل ولا تقل» و«ما الفرق؟» إلى فيديو تطبيقي</strong><span>أثر متوسط — قريب جدًا</span></div><div class="category-card"><strong>28. «نقولها شعرًا»</strong><span>أثر متوسط — قريب</span></div><div class="category-card"><strong>29. «خصائص العربية»</strong><span>أثر متوسط — قريب</span></div><div class="category-card"><strong>30. «قصة كتاب»</strong><span>أثر متوسط — قريب</span></div><div class="category-card"><strong>31. «رحلة كلمة»</strong><span>أثر متوسط — قريب</span></div><div class="category-card"><strong>32. «أصل الكلمة ومشتقاتها»</strong><span>أثر متوسط — قريب</span></div><div class="category-card"><strong>33. حملة «فهم التراث يبدأ من فهم اللغة»</strong><span>أثر مرتفع جدًا — قريب</span></div><div class="category-card"><strong>34. «الشبهات والإشكالات اللغوية في القرآن»</strong><span>أثر مرتفع — قريب ومستمر</span></div><div class="category-card"><strong>35. «الكلمة ذات المعاني المتعددة»</strong><span>أثر متوسط–مرتفع — قريب</span></div><div class="category-card"><strong>36. «المتشابهات والتعبير القرآني»</strong><span>أثر مرتفع — قريب ومستمر</span></div><div class="category-card"><strong>37. «معوقات طلب العلم»</strong><span>أثر متوسط — قريب</span></div><div class="category-card"><strong>38. «أخطاء المتعلمين»</strong><span>أثر متوسط — قريب</span></div><div class="category-card"><strong>39. إضافة المصادر للمحتوى العلمي</strong><span>أثر متوسط–مرتفع — قريب جدًا</span></div><div class="category-card"><strong>40. العربية والهوية وتربية الأبناء</strong><span>أثر متوسط–مرتفع — قريب–متوسط</span></div><div class="category-card"><strong>41. حملة مشتركة حول كتب التراث</strong><span>أثر مرتفع على التموضع — متوسط–بعيد</span></div><div class="category-card"><strong>42. سلسلة مؤسسية بأسلوب سينمائي</strong><span>أثر مرتفع على صورة البراند — بعيد</span></div><div class="category-card"><strong>43. بودكاست أو برنامج دوري مع اللجنة العلمية</strong><span>أثر مرتفع طويل المدى — بعيد</span></div></div>
+<div class="initiative">
+<h3>26. «العربية في دقيقة»</h3>
+<p><span class="label">الفكرة:</span> تقديم قاعدة أو فكرة لغوية جامعة في فيديو قصير وسريع.</p>
+<p><span class="label">التطبيق:</span> Reel أو Whiteboard أو Motion خفيف بدل الملخصات التقليدية.</p>
+<p><span class="label">الهدف:</span> تقديم علم نافع في صيغة سهلة الاستهلاك والمشاركة.</p>
+<p><span class="label">الأثر المتوقع:</span> زيادة الوصول وبناء حضور معرفي مستمر.</p>
+<div class="tags"><span class="tag med">أثر متوسط–مرتفع</span><span class="tag near">قريب</span></div>
+</div>
+<div class="initiative">
+<h3>27. تحويل «قل ولا تقل» و«ما الفرق؟» إلى فيديو تطبيقي</h3>
+<p><span class="label">الفكرة:</span> تطوير السلاسل الموجودة من التصميم الثابت إلى تجربة بصرية تفاعلية.</p>
+<p><span class="label">التطبيق:</span> كتابة الخطأ، شطبه، كتابة الصواب، وشرح الفرق أمام المشاهد.</p>
+<p><span class="label">الهدف:</span> زيادة الجاذبية والاحتفاظ بالمشاهدة.</p>
+<p><span class="label">الأثر المتوقع:</span> تحسين أداء سلاسل قائمة بالفعل بدل استبدالها.</p>
+<div class="tags"><span class="tag med">أثر متوسط</span><span class="tag near">قريب جدًا</span></div>
+</div>
+<div class="initiative">
+<h3>28. «نقولها شعرًا»</h3>
+<p><span class="label">الفكرة:</span> التعبير عن موقف أو معنى يومي من خلال بيت شعر مناسب.</p>
+<p><span class="label">الهدف:</span> ربط الشعر بالحياة اليومية وإظهار حيوية التراث الشعري.</p>
+<p><span class="label">الأثر المتوقع:</span> محتوى قابل للمشاركة ويخاطب الذائقة الأدبية.</p>
+<div class="tags"><span class="tag med">أثر متوسط</span><span class="tag near">قريب</span></div>
+</div>
+<div class="initiative">
+<h3>29. «خصائص العربية»</h3>
+<p><span class="label">الفكرة:</span> عرض ظواهر ومفردات تبرز ما تتميز به العربية بصورة علمية عملية.</p>
+<p><span class="label">الهدف:</span> إظهار عمق اللغة بعيدًا عن الخطاب العام حول «أهمية العربية».</p>
+<p><span class="label">الأثر المتوقع:</span> بناء Positioning معرفي أكثر تميزًا.</p>
+<div class="tags"><span class="tag med">أثر متوسط</span><span class="tag near">قريب</span></div>
+</div>
+<div class="initiative">
+<h3>30. «قصة كتاب»</h3>
+<p><span class="label">الفكرة:</span> تقديم الكتاب من خلال القصة أو الدافع أو السياق الذي أدى إلى تأليفه.</p>
+<p><span class="label">الهدف:</span> تحويل التعريف بالكتب إلى Storytelling أكثر تشويقًا.</p>
+<p><span class="label">الأثر المتوقع:</span> رفع قابلية المحتوى للمشاهدة والمشاركة.</p>
+<div class="tags"><span class="tag med">أثر متوسط</span><span class="tag near">قريب</span></div>
+</div>
+<div class="initiative">
+<h3>31. «رحلة كلمة»</h3>
+<p><span class="label">الفكرة:</span> تتبع تطور معنى أو استخدام كلمة عبر الزمن.</p>
+<p><span class="label">الهدف:</span> تقديم اللغة في صورة قصصية مرتبطة بالتاريخ والدلالة.</p>
+<p><span class="label">الأثر المتوقع:</span> رفع الاهتمام بالمحتوى اللغوي المعرفي.</p>
+<div class="tags"><span class="tag med">أثر متوسط</span><span class="tag near">قريب</span></div>
+</div>
+<div class="initiative">
+<h3>32. «أصل الكلمة ومشتقاتها»</h3>
+<p><span class="label">الفكرة:</span> عرض الجذر والمشتقات والعلاقات بين الكلمات.</p>
+<p><span class="label">الهدف:</span> إظهار ثراء النظام الاشتقاقي في العربية.</p>
+<p><span class="label">الأثر المتوقع:</span> سلسلة معرفية قابلة للاستمرار.</p>
+<div class="tags"><span class="tag med">أثر متوسط</span><span class="tag near">قريب</span></div>
+</div>
+<div class="initiative">
+<h3>33. حملة «فهم التراث يبدأ من فهم اللغة»</h3>
+<p><span class="label">الفكرة:</span> اختيار مقاطع من كتب التراث وبيان أثر الفهم اللغوي في فهم النص.</p>
+<p><span class="label">الهدف:</span> ربط دراسة العربية مباشرة بحاجات طالب العلم الشرعي.</p>
+<p><span class="label">الأثر المتوقع:</span> تقوية قيمة المعهد في ذهن الجمهور الشرعي.</p>
+<div class="tags"><span class="tag high">أثر مرتفع جدًا</span><span class="tag near">قريب</span></div>
+</div>
+<div class="initiative">
+<h3>34. «الشبهات والإشكالات اللغوية في القرآن»</h3>
+<p><span class="label">الفكرة:</span> تناول مواضع قد تبدو إشكالية لغويًا أو نحويًا ثم بيان تفسيرها.</p>
+<p><span class="label">الهدف:</span> إظهار أثر النحو واللغة في فهم القرآن.</p>
+<p><span class="label">الأثر المتوقع:</span> محتوى عالي الجذب وقوي في بناء Authority.</p>
+<div class="tags"><span class="tag high">أثر مرتفع</span><span class="tag near">قريب ومستمر</span></div>
+</div>
+<div class="initiative">
+<h3>35. «الكلمة ذات المعاني المتعددة»</h3>
+<p><span class="label">الفكرة:</span> عرض الكلمات التي تحمل أكثر من معنى بحسب السياق، خاصة في النص القرآني.</p>
+<p><span class="label">الهدف:</span> إظهار دقة السياق وثراء الدلالة.</p>
+<p><span class="label">الأثر المتوقع:</span> بناء محتوى معرفي جذاب وقابل للتسلسل.</p>
+<div class="tags"><span class="tag med">أثر متوسط–مرتفع</span><span class="tag near">قريب</span></div>
+</div>
+<div class="initiative">
+<h3>36. «المتشابهات والتعبير القرآني»</h3>
+<p><span class="label">الفكرة:</span> مقارنة مواضع متشابهة مع اختلاف التعبير، وشرح الدلالة اللغوية للاختلاف.</p>
+<p><span class="label">الهدف:</span> إبراز قيمة علوم العربية في فهم النص القرآني.</p>
+<p><span class="label">الأثر المتوقع:</span> تقوية الثقة العلمية ورفع الاهتمام بالمحتوى.</p>
+<div class="tags"><span class="tag high">أثر مرتفع</span><span class="tag near">قريب ومستمر</span></div>
+</div>
+<div class="initiative">
+<h3>37. «معوقات طلب العلم»</h3>
+<p><span class="label">الفكرة:</span> سلسلة تتناول ما يعوق الطالب عن الاستمرار في التعلم.</p>
+<p><span class="label">الهدف:</span> مخاطبة واقع المتعلم ومشكلاته اليومية، لا المادة العلمية وحدها.</p>
+<p><span class="label">الأثر المتوقع:</span> تقوية الارتباط الوجداني بالمحتوى والمعهد.</p>
+<div class="tags"><span class="tag med">أثر متوسط</span><span class="tag near">قريب</span></div>
+</div>
+<div class="initiative">
+<h3>38. «أخطاء المتعلمين»</h3>
+<p><span class="label">الفكرة:</span> تناول الأخطاء الشائعة في تعلم النحو والصرف والعربية بصورة أوسع.</p>
+<p><span class="label">الهدف:</span> تقديم محتوى تشخيصي يلمس مشكلات الجمهور مباشرة.</p>
+<p><span class="label">الأثر المتوقع:</span> رفع الصلة والمشاركة.</p>
+<div class="tags"><span class="tag med">أثر متوسط</span><span class="tag near">قريب</span></div>
+</div>
+<div class="initiative">
+<h3>39. إضافة المصادر للمحتوى العلمي</h3>
+<p><span class="label">الفكرة:</span> إسناد المعلومات التي تحتاج إلى مصدر أو توضيح أنها مراجعة علميًا.</p>
+<p><span class="label">الهدف:</span> رفع الموثوقية العلمية والاستجابة لتساؤلات الجمهور حول المرجعية.</p>
+<p><span class="label">الأثر المتوقع:</span> تحسين الثقة والصورة الأكاديمية.</p>
+<div class="tags"><span class="tag med">أثر متوسط–مرتفع</span><span class="tag near">قريب جدًا</span></div>
+</div>
+<div class="initiative">
+<h3>40. العربية والهوية وتربية الأبناء</h3>
+<p><span class="label">الفكرة:</span> ربط العربية بمشكلات الأسرة والهوية، مع تقديم مواد يمكن للوالدين مشاركتها مع الأبناء.</p>
+<p><span class="label">التطبيق:</span> قطع نثرية، أبيات، أو محتوى يساعد ولي الأمر على إدخال العربية إلى الحياة اليومية.</p>
+<p><span class="label">الهدف:</span> فتح مساحة اهتمام جديدة تتجاوز طالب العلم التقليدي.</p>
+<p><span class="label">الأثر المتوقع:</span> توسيع شرائح الجمهور وربط البراند بالهوية.</p>
+<div class="tags"><span class="tag med">أثر متوسط–مرتفع</span><span class="tag mid">قريب–متوسط</span></div>
+</div>
+<div class="initiative">
+<h3>41. حملة مشتركة حول كتب التراث</h3>
+<p><span class="label">الفكرة:</span> بناء حملة تربط قيمة العربية بالقدرة على فهم كتب التراث، ويمكن توسيعها لتتعاون فيها صفحات المعاهد المختلفة.</p>
+<p><span class="label">التطبيق:</span> اختيار نصوص أو كتب من مجالات متعددة وبيان كيف تخدم العربية فهمها، مع توحيد الفكرة وتكييف المحتوى لكل معهد.</p>
+<p><span class="label">الهدف:</span> تعزيز موقع ابن مالك باعتباره أساسًا يخدم طالب العلوم الشرعية.</p>
+<p><span class="label">الأثر المتوقع:</span> رفع الوعي بقيمة اللغة وربط المعهد بمنظومة تميز الأوسع.</p>
+<div class="tags"><span class="tag high">أثر مرتفع على التموضع</span><span class="tag far">متوسط–بعيد</span></div>
+</div><div class="initiative">
+<h3>42. سلسلة مؤسسية بأسلوب سينمائي</h3>
+<p><span class="label">الفكرة:</span> إنتاج محتوى مؤسسي عالي الجودة له سيناريو وهوية بصرية وإخراج يختلف عن المحتوى اليومي.</p>
+<p><span class="label">التطبيق:</span> موشن جرافيك، تصوير واقعي، سرد قصصي، وهوية ثابتة تستخدم في القطع الكبرى للبراند.</p>
+<p><span class="label">الهدف:</span> بناء صورة ذهنية راقية ومتماسكة لمعهد ابن مالك.</p>
+<p><span class="label">الأثر المتوقع:</span> رفع القيمة المدركة للعلامة ودعم تموضعها كجهة تعليمية كبرى.</p>
+<div class="tags"><span class="tag high">أثر مرتفع على صورة البراند</span><span class="tag far">بعيد</span></div>
+</div><div class="initiative">
+<h3>43. بودكاست أو برنامج دوري مع اللجنة العلمية</h3>
+<p><span class="label">الفكرة:</span> تحويل اللقاءات العلمية إلى أصل إعلامي متكرر يناقش قضايا اللغة وعلومها بصورة أعمق.</p>
+<p><span class="label">التطبيق:</span> برنامج مرئي وصوتي منتظم بهوية وعناوين ثابتة، مع إعادة تقطيع الحلقات إلى مقاطع قصيرة.</p>
+<p><span class="label">الهدف:</span> بناء حضور إعلامي وعلمي مستدام للجنة والمعهد.</p>
+<p><span class="label">الأثر المتوقع:</span> زيادة ساعات المشاهدة والاستماع وبناء Authority طويلة المدى.</p>
+<div class="tags"><span class="tag high">أثر مرتفع طويل المدى</span><span class="tag far">بعيد</span></div>
+</div></section>
+<section class="section">
+<h2>10. الشراكات والسفراء والإحالات</h2><div class="category-cards"><div class="category-card"><strong>44. برنامج إحالة للطلاب</strong><span>أثر مرتفع — متوسط</span></div><div class="category-card"><strong>45. تحويل الخريجين والطلاب المتفوقين إلى Social Proof فعلي</strong><span>أثر مرتفع جدًا — قريب</span></div><div class="category-card"><strong>46. استضافة أحد الخريجين في لقاء علمي</strong><span>أثر مرتفع — قريب</span></div><div class="category-card"><strong>47. Micro-Influencers في الخليج</strong><span>أثر مرتفع محتمل — قريب</span></div><div class="category-card"><strong>48. استخدام المقاعد المجانية مع المؤثرين أو المسابقات</strong><span>أثر متوسط–مرتفع — قريب</span></div></div>
+<div class="initiative">
+<h3>44. برنامج إحالة للطلاب</h3>
+<p><span class="label">الفكرة:</span> إتاحة آلية للطالب لترشيح آخرين مقابل نقاط أو خصومات أو حوافز.</p>
+<p><span class="label">الهدف:</span> تحويل قاعدة الطلاب الحالية إلى قناة استحواذ.</p>
+<p><span class="label">الأثر المتوقع:</span> زيادة التسجيلات العضوية وخفض الاعتماد على الإعلانات.</p>
+<div class="tags"><span class="tag high">أثر مرتفع</span><span class="tag mid">متوسط</span></div>
+</div>
+<div class="initiative">
+<h3>45. تحويل الخريجين والطلاب المتفوقين إلى Social Proof فعلي</h3>
+<p><span class="label">الفكرة:</span> عرض مخرجات حقيقية للطلاب بدل شهادات الرضا العامة.</p>
+<p><span class="label">التطبيق:</span> بحث أعده الطالب، مسألة أصبح قادرًا على شرحها، مادة أنتجها، أو تطبيق فعلي لما تعلمه.</p>
+<p><span class="label">الهدف:</span> إثبات أثر الدراسة على الطالب.</p>
+<p><span class="label">الأثر المتوقع:</span> رفع الثقة بصورة أقوى من شهادات المدح التقليدية.</p>
+<div class="tags"><span class="tag high">أثر مرتفع جدًا</span><span class="tag near">قريب</span></div>
+</div>
+<div class="initiative">
+<h3>46. استضافة أحد الخريجين في لقاء علمي</h3>
+<p><span class="label">الفكرة:</span> تقديم خريج مميز في محاضرة أو لقاء، مع التعريف بأنه أحد مخرجات المعهد.</p>
+<p><span class="label">الهدف:</span> جعل الخريج نفسه دليلًا على جودة المخرج العلمي.</p>
+<p><span class="label">الأثر المتوقع:</span> تعزيز السمعة والثقة وربط المخرجات بالبراند.</p>
+<div class="tags"><span class="tag high">أثر مرتفع</span><span class="tag near">قريب</span></div>
+</div>
+<div class="initiative">
+<h3>47. Micro-Influencers في الخليج</h3>
+<p><span class="label">الفكرة:</span> التعاون مع مؤثرين متخصصين ذوي جمهور مناسب في السعودية والخليج.</p>
+<p><span class="label">الهدف:</span> الوصول إلى شرائح جديدة ذات اهتمام وقدرة شرائية مناسبة.</p>
+<p><span class="label">الأثر المتوقع:</span> رفع جودة الاستحواذ إذا تم اختيار المؤثرين بعناية.</p>
+<div class="tags"><span class="tag high">أثر مرتفع محتمل</span><span class="tag near">قريب</span></div>
+</div>
+<div class="initiative">
+<h3>48. استخدام المقاعد المجانية مع المؤثرين أو المسابقات</h3>
+<p><span class="label">الفكرة:</span> تحويل المقعد المجاني من منحة منفصلة إلى أداة ترويج مرتبطة بمسابقة أو تعاون.</p>
+<p><span class="label">الهدف:</span> تعظيم العائد التسويقي من المقاعد المجانية.</p>
+<p><span class="label">الأثر المتوقع:</span> وصول ومحتوى وتفاعل إضافي دون زيادة كبيرة في التكلفة.</p>
+<div class="tags"><span class="tag med">أثر متوسط–مرتفع</span><span class="tag near">قريب</span></div>
+</div>
+</section>
+<section class="section">
+<h2>11. تنشيط الجمهور السابق والاستقطاب الموجه</h2><div class="category-cards"><div class="category-card"><strong>49. إعادة استهداف المسجلين السابقين</strong><span>أثر مرتفع جدًا — قريب جدًا</span></div><div class="category-card"><strong>50. استهداف الجمهور الخليجي بصورة أكثر تخصيصًا</strong><span>أثر مرتفع تجاريًا — قريب–متوسط</span></div><div class="category-card"><strong>51. اختبار استهداف غير الناطقين بالعربية</strong><span>أثر محتمل مرتفع — بعيد</span></div><div class="category-card"><strong>52. منظومة Voice of Customer من المبيعات والدعم</strong><span>أثر مرتفع جدًا — قريب ومستمر</span></div></div>
+<div class="initiative">
+<h3>49. إعادة استهداف المسجلين السابقين</h3>
+<p><span class="label">الفكرة:</span> إعادة التواصل مع قاعدة كبيرة من المسجلين السابقين الذين لم يتحولوا إلى طلاب.</p>
+<p><span class="label">التطبيق:</span> تقسيم القاعدة إلى شرائح بدل إرسال رسالة واحدة للجميع، وبناء خطاب مناسب لكل شريحة.</p>
+<p><span class="label">الهدف:</span> استثمار Leads موجودة بالفعل بدل البدء كل مرة من جمهور بارد.</p>
+<p><span class="label">الأثر المتوقع:</span> رفع التحويل وتقليل تكلفة الاستحواذ.</p>
+<div class="tags"><span class="tag high">أثر مرتفع جدًا</span><span class="tag near">قريب جدًا</span></div>
+</div>
+<div class="initiative">
+<h3>50. استهداف الجمهور الخليجي بصورة أكثر تخصيصًا</h3>
+<p><span class="label">الفكرة:</span> زيادة حضور الجمهور الخليجي من خلال قنوات ورسائل أكثر ملاءمة له.</p>
+<p><span class="label">الهدف:</span> تحسين جودة التسجيلات وليس عددها فقط.</p>
+<p><span class="label">الأثر المتوقع:</span> دعم الإيراد وتحسين مزيج الأسواق.</p>
+<div class="tags"><span class="tag high">أثر مرتفع تجاريًا</span><span class="tag mid">قريب–متوسط</span></div>
+</div>
+<div class="initiative">
+<h3>51. اختبار استهداف غير الناطقين بالعربية</h3>
+<p><span class="label">الفكرة:</span> اختبار محتوى أو ترجمات أو Subtitles أو Transcripts لقياس وجود طلب من جمهور غير عربي.</p>
+<p><span class="label">الهدف:</span> استكشاف فرصة توسع دولية قبل بناء منتج كامل لها.</p>
+<p><span class="label">الأثر المتوقع:</span> فرصة نمو جديدة على المدى البعيد.</p>
+<div class="tags"><span class="tag med">أثر محتمل مرتفع</span><span class="tag far">بعيد</span></div>
+</div>
+<div class="initiative">
+<h3>52. منظومة Voice of Customer من المبيعات والدعم</h3>
+<p><span class="label">الفكرة:</span> جمع الاعتراضات والأسئلة ونقاط الألم بصورة دورية من فرق المبيعات والدعم والتعليقات.</p>
+<p><span class="label">التطبيق:</span> تقرير دوري يصنف أكثر الأسئلة، أسباب عدم الدفع، صعوبات التسجيل، مشكلات التجربة، واللغة التي يستخدمها الجمهور في التعبير عنها.</p>
+<p><span class="label">الهدف:</span> جعل المحتوى والرسائل والحملات مبنية على صوت العميل الفعلي.</p>
+<p><span class="label">الأثر المتوقع:</span> رفع صلة الرسائل بالاحتياج وتحسين جودة التحويل بمرور الوقت.</p>
+<div class="tags"><span class="tag high">أثر مرتفع جدًا</span><span class="tag near">قريب ومستمر</span></div>
+</div></section>
+<section class="section">
+<h2>12. مساعدة قرار الالتحاق وتيسير التسجيل</h2><div class="category-cards"><div class="category-card"><strong>53. تجربة شهر مع إمكانية الاسترداد</strong><span>أثر محتمل مرتفع — متوسط</span></div><div class="category-card"><strong>54. تقليل خطوات التسجيل</strong><span>أثر مرتفع — قريب–متوسط</span></div><div class="category-card"><strong>55. استعراض عملي لخطوات الاشتراك</strong><span>أثر متوسط — قريب</span></div></div>
+<div class="initiative">
+<h3>53. تجربة شهر مع إمكانية الاسترداد</h3>
+<p><span class="label">الفكرة:</span> إتاحة فترة بداية يستطيع الطالب بعدها استرداد الرسوم إذا وجد التجربة غير مناسبة.</p>
+<p><span class="label">الهدف:</span> تقليل المخاطرة المدركة في قرار الدفع.</p>
+<p><span class="label">الأثر المتوقع:</span> تحسين التحويل لدى المترددين.</p>
+<p><span class="label">ملاحظة:</span> الفكرة تحتاج توافقًا تقنيًا وماليًا وتشغيليًا قبل التطبيق.</p>
+<div class="tags"><span class="tag high">أثر محتمل مرتفع</span><span class="tag mid">متوسط</span></div>
+</div>
+<div class="initiative">
+<h3>54. تقليل خطوات التسجيل</h3>
+<p><span class="label">الفكرة:</span> مراجعة رحلة التسجيل وحذف أو تأجيل البيانات والخطوات غير الضرورية.</p>
+<p><span class="label">التطبيق:</span> تقليل عدد الحقول أو تقسيم التسجيل إلى مرحلتين إذا كان ذلك يخفض الاحتكاك.</p>
+<p><span class="label">الهدف:</span> تقليل Drop-off أثناء التسجيل.</p>
+<p><span class="label">الأثر المتوقع:</span> تحسين معدل التحويل من الاهتمام إلى التسجيل المكتمل.</p>
+<div class="tags"><span class="tag high">أثر مرتفع</span><span class="tag mid">قريب–متوسط</span></div>
+</div>
+<div class="initiative">
+<h3>55. استعراض عملي لخطوات الاشتراك</h3>
+<p><span class="label">الفكرة:</span> شرح واضح لما يحدث من بداية التسجيل حتى الدخول للمنصة.</p>
+<p><span class="label">الهدف:</span> خفض الارتباك وتقليل الأسئلة المتكررة.</p>
+<p><span class="label">الأثر المتوقع:</span> تجربة أكثر سلاسة وضغط أقل على الدعم.</p>
+<div class="tags"><span class="tag med">أثر متوسط</span><span class="tag near">قريب</span></div>
+</div>
+</section>
+<section class="section">
+<h2>13. الاحتفاظ بالطالب واستمراريته</h2><div class="category-cards"><div class="category-card"><strong>56. رفع معدل إتمام البرنامج</strong><span>أثر مرتفع — متوسط</span></div><div class="category-card"><strong>57. Gamification وحوافز الاستمرار</strong><span>أثر مرتفع على الاحتفاظ — متوسط–بعيد</span></div><div class="category-card"><strong>58. استحداث دور المعيد من الطلاب المتفوقين</strong><span>أثر مرتفع على الولاء — بعيد</span></div><div class="category-card"><strong>59. برنامج «تعلم ممن سبقك» لتوجيه الأقران</strong><span>أثر مرتفع — قريب–متوسط</span></div><div class="category-card"><strong>60. السعي لاعتماد رسمي لشهادات المعهد</strong><span>أثر استراتيجي محتمل — بعيد</span></div></div>
+<div class="initiative">
+<h3>56. رفع معدل إتمام البرنامج</h3>
+<p><span class="label">الفكرة:</span> استمرار التواصل مع الطالب بعد التحاقه بدل تركه يعتمد على نفسه بصورة كاملة.</p>
+<p><span class="label">التطبيق:</span> بريد، رسائل، تذكيرات، حوافز، وربما جوائز مرحلية.</p>
+<p><span class="label">الهدف:</span> تحسين Completion Rate وRetention.</p>
+<p><span class="label">الأثر المتوقع:</span> زيادة عدد الطلاب الذين يكملون البرنامج وتحسين جودة التجربة.</p>
+<div class="tags"><span class="tag high">أثر مرتفع</span><span class="tag mid">متوسط</span></div>
+</div>
+<div class="initiative">
+<h3>57. Gamification وحوافز الاستمرار</h3>
+<p><span class="label">الفكرة:</span> استخدام نقاط ومكافآت وحوافز مرحلية داخل تجربة التعلم.</p>
+<p><span class="label">الهدف:</span> زيادة تكرار الدخول والاستمرار وإكمال المهام.</p>
+<p><span class="label">الأثر المتوقع:</span> رفع Engagement وRetention، مع قابلية التوسع لاحقًا إلى نظام ولاء أكثر تطورًا.</p>
+<div class="tags"><span class="tag high">أثر مرتفع على الاحتفاظ</span><span class="tag far">متوسط–بعيد</span></div>
+</div>
+<div class="initiative">
+<h3>58. استحداث دور المعيد من الطلاب المتفوقين</h3>
+<p><span class="label">الفكرة:</span> ترشيح بعض الطلاب المتفوقين لأدوار مساندة علمية أو إرشادية داخل التجربة التعليمية.</p>
+<p><span class="label">التطبيق:</span> معايير اختيار واضحة، مهام محددة، وإمكانية ربط الدور بمزايا أو حوافز مناسبة.</p>
+<p><span class="label">الهدف:</span> خلق مسار تطور للطالب والاستفادة من المتفوقين في دعم زملائهم.</p>
+<p><span class="label">الأثر المتوقع:</span> رفع الولاء وتقوية المجتمع وتقليل الضغط على الإشراف المباشر.</p>
+<div class="tags"><span class="tag high">أثر مرتفع على الولاء</span><span class="tag far">بعيد</span></div>
+</div><div class="initiative">
+<h3>59. برنامج «تعلم ممن سبقك» لتوجيه الأقران</h3>
+<p><span class="label">الفكرة:</span> ربط الطلاب الجدد بطلاب من سنوات متقدمة يقدمون لهم توجيهًا عمليًا في بداية الرحلة.</p>
+<p><span class="label">التطبيق:</span> مجموعات صغيرة أو Mentor لكل مجموعة، مع إطار واضح للأسئلة والتوجيه ومزايا رمزية للمرشد.</p>
+<p><span class="label">الهدف:</span> تقليل التيه في البداية وتحسين اندماج الطالب الجديد.</p>
+<p><span class="label">الأثر المتوقع:</span> دعم الاستمرار وتقليل الانقطاع المبكر.</p>
+<div class="tags"><span class="tag high">أثر مرتفع</span><span class="tag mid">قريب–متوسط</span></div>
+</div><div class="initiative">
+<h3>60. السعي لاعتماد رسمي لشهادات المعهد</h3>
+<p><span class="label">الفكرة:</span> دراسة إمكانية حصول شهادات المعهد على اعتماد أكاديمي أو مؤسسي من جهة مناسبة.</p>
+<p><span class="label">التطبيق:</span> تقييم الجهات الممكنة والمتطلبات والتكلفة والقيمة الفعلية للاعتماد قبل الدخول في المسار.</p>
+<p><span class="label">الهدف:</span> رفع القيمة المؤسسية للشهادة واستقطاب شرائح تعطي الاعتماد وزنًا في قرارها.</p>
+<p><span class="label">الأثر المتوقع:</span> يمكن أن يعزز الثقة والقيمة المدركة، لكنه مسار مؤسسي طويل وليس تكتيكًا تسويقيًا سريعًا.</p>
+<div class="tags"><span class="tag high">أثر استراتيجي محتمل</span><span class="tag far">بعيد</span></div>
+</div></section>
+<section class="section">
+<h2>14. الصورة الكلية للمبادرات</h2>
+<p class="section-intro">
+    عند جمع المبادرات معًا، تظهر منظومة مترابطة وليست مجرد قائمة حملات منفصلة. بعضها يخدم الاكتساب، وبعضها يرفع الثقة، وبعضها يزيل الاحتكاك قبل التسجيل، وبعضها يبني علاقة أطول مع الطالب بعد التحاقه.
+  </p>
+<div class="callout">
+    يمكن قراءة المنظومة بالشكل التالي:
+    <strong>الوصول إلى الجمهور → إشراكه بالمحتوى والتحديات → تعريفه بالقيمة العلمية → إتاحة تجربة حقيقية من الدراسة → إزالة الغموض والاحتكاك → التسجيل → دعم الاستمرار → تحويل الطلاب والخريجين إلى مصادر ثقة واستقطاب جديدة.</strong>
+</div>
+</section>
+<div class="footer">التقرير النهائي الشامل للمبادرات الإبداعية والتسويقية — معهد ابن مالك</div>
+</div>
+</body>
+</html>
